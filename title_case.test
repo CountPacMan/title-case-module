@@ -16,7 +16,6 @@ class SimpletestUnitTestTitleCaseTestCase extends DrupalUnitTestCase {
         $this->assertEqual($result, "Rain");
     }
 
-
     function testGetTitleCaseWithIgnoreList() {
         $input  = "rain in spain";
         $result = get_title_case($input);
