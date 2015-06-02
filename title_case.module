@@ -1,4 +1,6 @@
 <?php
+
+
 function get_title_case($input) {
     $ignore = ["a", "an", "the", "and", "but", "or", "nor", "at", "by", "for", "from", "in", "into", "of", "off", "on", "onto", "out", "up", "with", "to", "as"];
 
