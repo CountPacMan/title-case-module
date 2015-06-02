@@ -15,9 +15,11 @@ class SimpletestUnitTestTitleCaseTestCase extends DrupalUnitTestCase {
         $message = "returns capitalization of single word";
         $this->assertTrue($result == "Rain", $message);
 
-        $result = get_title_case("rain in spain");
-        $message = "returns capitalization of multiple words";
-        $this->assertTrue($result == "Rain In Spain", $message);
+        // will not pass after getting the ignore list to pass
+        
+        // $result = get_title_case("rain in spain");
+        // $message = "returns capitalization of multiple words";
+        // $this->assertTrue($result == "Rain In Spain", $message);
 
         $result = get_title_case("rain in spain");
         $message = "returns capitalization of multiple words except ignore list";

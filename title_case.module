@@ -5,7 +5,7 @@ function get_title_case($input) {
     $input = explode(' ', $input);
     $final = [];
     foreach ($input as $word) {
-        array_push($final, ucfirst($word));
+        in_array($word, $ignore) ? array_push($final, $word) : array_push($final, ucfirst($word));
     }
     return implode(' ', $final);
 }
