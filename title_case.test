@@ -70,8 +70,9 @@ class TitleCaseFunctionalTests extends DrupalWebTestCase {
     }
 
     public function testTitleCaseForm() {
-        // $this->drupalGet('title_case');
-        // $this->assertText("Input", 'The text on the page is correct. Hoorah!');
+        $this->drupalGet('title_case');
+        $this->assertText("Input", 'The text on the page is correct. Hoorah!');
+        
         $this->drupalGet('title_case_success');
         $this->assertText("The Rain in Spain", 'The text on the page is correct. Hoorah!');
     }
