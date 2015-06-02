@@ -7,5 +7,11 @@ function get_title_case($input) {
     foreach ($input as $word) {
         in_array($word, $ignore) ? array_push($final, $word) : array_push($final, ucfirst($word));
     }
+
+    // force capitalize first word
+    $final[0] = ucfirst($final[0]);
+    $last = count($final) - 1;
+    $final[$last] = ucfirst($final[$last]);
+
     return implode(' ', $final);
 }

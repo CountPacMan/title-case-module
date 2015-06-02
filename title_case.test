@@ -16,14 +16,27 @@ class SimpletestUnitTestTitleCaseTestCase extends DrupalUnitTestCase {
         $this->assertTrue($result == "Rain", $message);
 
         // will not pass after getting the ignore list to pass
-        
+
         // $result = get_title_case("rain in spain");
         // $message = "returns capitalization of multiple words";
         // $this->assertTrue($result == "Rain In Spain", $message);
 
         $result = get_title_case("rain in spain");
-        $message = "returns capitalization of multiple words except ignore list";
+        $message = "does not capitalize words in ignore list";
         $this->assertTrue($result == "Rain in Spain", $message);
+
+        $input = "in the park";
+        $result = get_title_case($input);
+        $message = "ignore list not applied to first word";
+        $this->pass(var_export($input . ' = ' . $result, TRUE));
+        $this->assertTrue($result == "In the Park", $message);
+
+        $input = "in the park the";
+        $result = get_title_case($input);
+        $message = "ignore list not applied to last word";
+        $this->pass(var_export($input . ' = ' . $result, TRUE));
+        $this->assertTrue($result == "In the Park The", $message);
+
 
     }
 }
